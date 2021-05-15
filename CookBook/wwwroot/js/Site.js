@@ -1,22 +1,31 @@
 ﻿// Write your JavaScript code.
-const api = "4e03be6d29fe48f4bb3f8c037d930808"
+const api = "6ef5d2b5f2984c96896a94b1413bb9a5"
 const submitButton = document.querySelector("#submit");
-//var searchBarValue = $('#searchbar').val()
 submitButton.addEventListener('click', function () {
     console.log('You clicked Me!');
     callRecipe();
 });
 
+
 function callRecipe() {
     let viewNumber = 10;
     let searchBarValue = document.querySelector('#searchbar').value
-    let url = 'https://api.spoonacular.com/recipes/complexSearch?query=' + searchBarValue + '&number=' + viewNumber + '&apiKey='+ api
+    let url = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&fillIngredients=true&query= ${searchBarValue}&number=${viewNumber}&apiKey=${api}`
     fetch(url)
         .then(response => (response.json()))
-        .then(response => (console.log(response)))
-
-        
-    //    .then(data => assignCurrentWeatherData(data))
-    console.log("searchBarValue:", searchBarValue)
-    console.log("API query: ", url)
+        .then(response => {
+            let recipes = response.results;
+            //window.location.replace('https://localhost:44366/RecipeResults');
+            let mainContainer = document.getElementById('myData')
+            recipes.forEach(recipe => {
+                let div = document.createElement("a");
+                var linktext = document.createTextNode(recipe.title);
+                div.appendChild(linktext);
+                div.title = recipe.title;
+                div.href = "https://www.google.com";
+                //div.innerHTML = `Recipe: ${recipe.title} Image: ${recipe.image}`;
+                mainContainer.appendChild(div);
+            })
+            mainContainer.style
+        })
 }
