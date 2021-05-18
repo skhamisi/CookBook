@@ -1,64 +1,31 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. 
-
-a.navbar-brand {
-    white-space: normal;
-    text-align: center;
-    word-break: break-all;
+﻿.headers-title-container-flex-row {
+    display: flex;
+    justify-content: center;
+    border: solid 1px #808080;
+    color: antiquewhite;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
- Provide sufficient contrast against white background 
-a {
-    color: #0366d6;
+.main-container-flex-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    color: antiquewhite;
+    justify-content: flex-start;
+    min-height: 80%;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+.card {
+    min-width: fit-content !important;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+.recipe-header {
+    background: none !important;
+    color: none !important;
+    fill: none !important;
+    fill-opacity: inherit !important;
 }
-
- Sticky footer styles
--------------------------------------------------- 
-html {
-    font-size: 14px;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-.border-top {
-    border-top: 1px solid #e5e5e5;
-}
-
-.border-bottom {
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-    font-size: 1rem;
-    line-height: inherit;
-}
-
- Sticky footer styles
--------------------------------------------------- 
-html {
-    position: relative;
-    min-height: 100%;
-}*/
 
 #heading {
     display: inline-block;
@@ -69,7 +36,7 @@ html {
     font-family: sans-serif;
     font-weight: 500;
     color: antiquewhite;
-    border: solid 1px #808080; 
+    border: solid 1px #808080;
     padding: 60px;
     text-transform: uppercase;
     text-decoration-line: overline underline;
@@ -77,14 +44,29 @@ html {
 
 body {
     background-image: url('Images/background.jpg');
-    /*background-repeat: no-repeat;*/
+    background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 60px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between
 }
 
-.search {
-    text-align: center;
+.info {
+    text-align: left;
+    font-size: 15pt;
 }
+.container-fluid {
+    display:flex;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 #searchheading {
     font-family: sans-serif;
@@ -92,6 +74,8 @@ body {
     font-size: 25pt;
     font-style: italic;
     margin-bottom: 10px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 #searchbar {
@@ -139,8 +123,24 @@ body {
     background-color: #e1e1e1
 }
 
-#myData{
+.sourceURL {
     color: white;
-    text-align: center;
 }
 
+.name {
+    color: antiquewhite;
+    font-size: 18pt;
+    text-transform: uppercase;
+    text-decoration: underline;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.home-controls {
+    background: #222;
+    color: antiquewhite;
+    font-size: 20pt !important;
+    transition: 1s;
+    -webkit-tap-highlight-color: transparent;
+
+}
